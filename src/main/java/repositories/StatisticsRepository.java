@@ -28,7 +28,7 @@ public class StatisticsRepository {
         Connection conn = connectionMySql.open();
         try (PreparedStatement st = conn.prepareStatement(command)) {
             st.setInt(1, statistics.getComputer().getId());
-            st.setDouble(2, statistics.getTemperature());
+            st.setDouble(2, Double.parseDouble(statistics.getTemperature()));
             st.setDouble(3, statistics.getCpuUsage());
             st.setDouble(4, statistics.getRamUsage());
             st.setDouble(5, statistics.getRamAvailable());
